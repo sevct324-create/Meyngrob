@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#123528" />
+  <meta name="description" content="Explore mangrove conservation in Orani, Bataan with BAKAONE." />
+  <title>Orani Mangrove Atlas — BAKAONE</title>
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="preconnect" href="https://server.arcgisonline.com" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="home-link" aria-label="BAKAONE home">BAKA<span>ONE</span></a>
+    <nav aria-label="Main navigation"><a class="nav-active" href="#explore">Explore</a><a href="#about">About the map</a><a class="nav-home" id="nav-home-link" href="#">Home ↗</a></nav>
+    <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main id="explore">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy"><p class="eyebrow">BAKAONE · COASTAL ATLAS</p><h1 id="page-title">Every root matters.<br/><em>Every coast counts.</em></h1><p class="lede">Explore the mangrove coast of Orani, Bataan. A living map for understanding and protecting the places that shelter our shores.</p></div>
+      <div class="place-chip"><span class="pin">⌖</span><span><b>Orani, Bataan</b><small>Central Luzon · Philippines</small></span></div>
+    </section>
+
+    <section class="explorer" aria-label="Interactive map and mangrove information">
+      <div class="map-shell">
+        <div id="map" role="application" aria-label="Interactive satellite map centered on Orani, Bataan"></div>
+        <div class="map-topline"><span class="live-dot"></span><span>FIELD VIEW</span><span class="map-coordinate">14.80° N · 120.54° E</span></div>
+        <div class="map-message" id="map-message" role="status"><span class="spinner"></span><span>Loading satellite imagery…</span></div>
+        <div class="map-controls"><button id="zoom-in" aria-label="Zoom in">＋</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="reset-view" aria-label="Reset map view">⌖</button></div>
+        <div class="legend"><p class="legend-title">MAP KEY</p><div><i class="boundary-swatch"></i><span>Orani municipal outline</span></div><div><i class="center-swatch"></i><span>Approx. barangay center</span></div><div><i class="mangrove-swatch"></i><span>Mangrove inventory station</span></div><small>Green points show report station coordinates. Reported area values are not drawn as polygon footprints.</small></div>
+        <div class="map-attribution-note">Imagery © Esri · Boundary © NAMRIA/PSA via OCHA</div>
+      </div>
+      <aside class="data-panel">
+        <div class="panel-head"><div><p class="eyebrow">MANGROVE INVENTORY · 2020</p><h2>Reported survey sites</h2></div><span class="leaf-mark">✳</span></div>
+        <p class="panel-intro">Table 37 lists station coordinates and area values for these Northeast Bataan sites. Green map points are the report coordinates; no site boundary polygons are provided.</p>
+        <div class="summary"><span>Listed Orani stations · sum</span><b id="total-area">0.4373 km²</b><small>Calculated from five report rows; not a comprehensive municipal total.</small></div>
+        <div class="barangay-heading"><span>REPORT STATION</span><span>AREA (KM²)</span></div>
+        <ul id="barangay-list" class="barangays"></ul>
+        <div class="data-note"><span>i</span><p>Blue markers are approximate barangay centers, not mangrove locations or boundaries. <a href="https://www.philatlas.com/luzon/r03/bataan/orani/" target="_blank" rel="noreferrer">Center source: PhilAtlas ↗</a><br/><a href="https://pemsea.org/sites/default/files/2024-07/Second%20Bataan%20SOC%202024.pdf" target="_blank" rel="noreferrer">Inventory source: PEMSEA Table 37 ↗</a></p></div>
+      </aside>
+    </section>
+
+    <section class="below" id="about"><div><p class="eyebrow">A MAP IN PROGRESS</p><h2>Good stewardship starts with good coordinates.</h2></div><p>Orani’s mangroves protect shorelines and support coastal life. This atlas is ready for verified municipal boundaries and mangrove survey data, so each highlight can point to a real place.</p></section>
+  </main>
+  <footer><a class="brand" href="#">BAKA<span>ONE</span></a><span>Every Root Matters, Every Coast Counts.</span><a href="#explore">Back to map ↑</a></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
